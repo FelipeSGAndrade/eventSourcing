@@ -1,0 +1,51 @@
+<%- contentFor('body') %>
+<script type="text/javascript" src="/js/accounts.js"></script>
+
+<div class="jumbotron">
+    <h1>Accounts summary</h1>
+    <br/>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Account</th>
+                <th scope="col">Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (account of accounts){%>
+                <tr>
+                    <td>
+                        <%= account.name %>
+                    </td>
+                    <td>
+                        <%= account.balance %>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    <button onclick="addAcount()">Add account</button>
+
+    <h1>History</h1>
+    <br/>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (event of history){%>
+                <tr>
+                    <td>
+                        <%= event.type %>
+                    </td>
+                    <td>
+                        <%= JSON.stringify(event) %>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
